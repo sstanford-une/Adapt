@@ -13,17 +13,17 @@ public class PlayerInput : MonoBehaviour
 
     public void Choose1()
     {
-        masterScript.ChoiceTarget = 1;
+        masterScript.PlayerChoice(1);
         Debug.Log("Player Chose 1");
     }
     public void Choose2()
     {
-        masterScript.ChoiceTarget = 2;
+        masterScript.PlayerChoice(2);
         Debug.Log("Player Chose 2");
     }
     public void Choose3()
     {
-        masterScript.ChoiceTarget = 3;
+        masterScript.PlayerChoice(3);
         Debug.Log("Player Chose 3");
     }
 

@@ -25,150 +25,95 @@ public class MasterScript : MonoBehaviour
     void Start()
     {
         ProgressCount = 0;
-        CoStop = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerChoice(int choice)
     {
-        FadeCheck();
-    }
-
-    IEnumerator ImageFadeIn()
-    {
-        FadeAmount = 0;
-
-        while (FadeAmount < 1)
+        if (choice == 1)
         {
-            for (int i = 0; i < 255; i++)
-            {
-                TargetColor = new Color(255, 255, 255, (255 * FadeAmount));
-            }
+            this.FadeIn(Image1Array[ProgressCount], 1);
+            this.ProgressStory();
         }
-
-        if (FadeAmount == 1)
+        else if (choice == 2)
         {
-            yield return new WaitForSeconds(5);
-            yield return CoStop = true;
+            this.FadeIn(Image2Array[ProgressCount], 1);
+            this.ProgressStory();
         }
-    }
-
-    IEnumerator ImageFadeOut()
-    {
-        FadeAmount = 1;
-
-        while(FadeAmount > 0)
+        else if (choice == 3)
         {
-            for (int i = 0; i < 255; i--)
-            {
-                TargetColor = new Color(255, 255, 255, (255 * FadeAmount));
-            }
-        }
-
-        if (FadeAmount == 0)
-        {
-            yield return new WaitForSeconds(5);
-            yield return CoStop = true;
-        }
-    }
-
-    IEnumerator TextFadeIn()
-    {
-        Color QuestionColor = QuestionArray[ProgressCount].GetComponent<Image>().color; 
-        Color Answer1Color = Answer1Array[ProgressCount].GetComponent<Image>().color;
-        Color Answer2Color = Answer2Array[ProgressCount].GetComponent<Image>().color;
-        Color Answer3Color = Answer3Array[ProgressCount].GetComponent<Image>().color;
-
-        while (FadeAmount < 1)
-        {
-            for (int i = 0; i < 255; i++)
-            {
-                QuestionColor = new Color(255, 255, 255, (255 * FadeAmount));
-                Answer1Color = new Color(255, 255, 255, (255 * FadeAmount));
-                Answer2Color = new Color(255, 255, 255, (255 * FadeAmount));
-                Answer3Color = new Color(255, 255, 255, (255 * FadeAmount));
-            }
-        }
-
-        if (FadeAmount == 1)
-        {
-            yield return new WaitForSeconds(5);
-            yield return CoStop = true;
-        }
-    }
-
-    IEnumerator TextFadeOut()
-    {
-        float FadeAmount = 1;
-        Debug.Log("Begin Text Fade");
-        Image TargetQuestion = QuestionArray[ProgressCount].GetComponent<Image>();
-        //Color QuestionColor = QuestionArray[ProgressCount].GetComponent<Image>().color;
-        //Color Answer1Color = Answer1Array[ProgressCount].GetComponent<Image>().color;
-        //Color Answer2Color = Answer2Array[ProgressCount].GetComponent<Image>().color;
-        //Color Answer3Color = Answer3Array[ProgressCount].GetComponent<Image>().color;
-
-        while (FadeAmount > 0)
-        {
-            for (int i = 0; i < 255; i++)
-            {
-                TargetQuestion.color  = new Color(255, 255, 255, (i));
-                //Answer1Color = new Color(255, 255, 255, (255 * FadeAmount));
-                //Answer2Color = new Color(255, 255, 255, (255 * FadeAmount));
-                //Answer3Color = new Color(255, 255, 255, (255 * FadeAmount));
-                FadeAmount = (i / 255f);
-                Debug.Log("Fading..."+ FadeAmount);
-            }
-        }
-
-        if (FadeAmount == 0)
-        {
-            Debug.Log("Stopping FadeOut");
-            yield return new WaitForSeconds(5);
-            yield return CoStop = true;
-        }
-    }
-
-    void FadeCheck()
-    {
-        if(CoStop == true)
-        {
-            StopAllCoroutines();
-            CoStop = false;
-        } 
-    }
-
-    public void PlayerChoice()
-    {
-        if (ChoiceTarget == 1)
-        {
-            TargetColor = Image1Array[ProgressCount].GetComponent<Image>().color;
-        }
-        else if (ChoiceTarget == 2)
-        {
-            TargetColor = Image2Array[ProgressCount].GetComponent<Image>().color;
-        }
-        else if (ChoiceTarget ==3)
-        {
-            TargetColor = Image3Array[ProgressCount].GetComponent<Image>().color;
+            this.FadeIn(Image3Array[ProgressCount], 1);
+            this.ProgressStory();
         }
         else
         {
-            Debug.Log("Player Choice error");
+            Debug.LogError("Player Choice error");
         }
     }
 
     public void ProgressStory()
     {
-        Debug.Log("Progressing Story...");
-        StartCoroutine("TextFadeOut");
-        //Deactivate previous question & Answers
-        //Progress += 1
-        //Fade in image layer
-        //fade in music
-        //wait a few seconds
-        //activate next question & Answers
-        //fade in next question & Answers
+        Debug.Log($"Progressing Story... {this.ProgressCount}");
+
+        this.FadeOut(QuestionArray[ProgressCount], 1);
+        this.FadeOut(Answer1Array[ProgressCount], 1);
+        this.FadeOut(Answer2Array[ProgressCount], 1);
+        this.FadeOut(Answer3Array[ProgressCount], 1);
+
+        this.ProgressCount += 1;
+
+        var timeable = this.gameObject.AddComponent<Timeable>();
+
+        timeable.OnFinish += () =>
+        {
+            this.FadeIn(QuestionArray[ProgressCount], 1);
+            this.FadeIn(Answer1Array[ProgressCount], 1);
+            this.FadeIn(Answer2Array[ProgressCount], 1);
+            this.FadeIn(Answer3Array[ProgressCount], 1);
+
+            MonoBehaviour.Destroy(timeable);
+        };
+
+        timeable.Fade(100, 0, 5);
     }
 
+    void FadeOut(GameObject go, int delay)
+    {
+        this.Fade(go, 1, 0, delay);
+    }
+
+    void FadeIn(GameObject go, int delay)
+    {
+        this.Fade(go, 0, 1, delay);
+    }
+
+    void Fade(GameObject go, float start, float end, float delay)
+    {
+        var image = go.GetComponent<Image>();
+        var spriteRenderer = go.GetComponent<SpriteRenderer>();
+        var timeable = go.AddComponent<Timeable>();
+
+        timeable.Fade(start, end, delay);
+
+        timeable.OnChange += amount =>
+        {
+            if (image != null)
+            {
+                image.color = new Color(255, 255, 255, amount);
+
+                Debug.Log(image.color);
+            }
+            else
+            {
+                spriteRenderer.color = new Color(255, 255, 255, amount);
+
+                Debug.Log(spriteRenderer.color);
+            }
+        };
+
+        timeable.OnFinish += () =>
+        {
+            MonoBehaviour.Destroy(timeable);
+        };
+    }
 
 }
