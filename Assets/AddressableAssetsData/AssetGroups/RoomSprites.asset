@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RoomSprites
+  m_EditorClassIdentifier: 
+  m_GroupName: RoomSprites
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f103db433ebfe6743b3bcfbc303af8cd
+  m_SerializeEntries:
+  - m_GUID: 05f8d91a3e7db3846b7a22323a7d3e7a
+    m_Address: Assets/Room Images/6.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 092dcf77e93527944a56e616eda86538
+    m_Address: Assets/Room Images/8.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1750427845cfb7f4c8494e47edabc87d
+    m_Address: Assets/Room Images/0.0.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 1750427845cfb7f4c8494e47edabc87d, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 1750427845cfb7f4c8494e47edabc87d, type: 3}
+  - m_GUID: 17e929f8e750cb64fa2b3083c95e0032
+    m_Address: Assets/Room Images/1.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 17e929f8e750cb64fa2b3083c95e0032, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 17e929f8e750cb64fa2b3083c95e0032, type: 3}
+  - m_GUID: 2081a7ef41256ef4a8c3f9d3c41b94a6
+    m_Address: Assets/Room Images/5.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 24c2615c81149594fa2aae949ece2702
+    m_Address: Assets/Room Images/3.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 334d7df443565fd42b93cba6119d1ca6
+    m_Address: Assets/Room Images/5.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 40ece6f21bc6119429d36fa62cc2144b
+    m_Address: Assets/Room Images/9.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4ae1ce1fbbac8e641a630fab58ff3fe2
+    m_Address: Assets/Room Images/4.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5577f6934af330e45aeb1c9f7676f51d
+    m_Address: Assets/Room Images/1.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: 5577f6934af330e45aeb1c9f7676f51d, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 5577f6934af330e45aeb1c9f7676f51d, type: 3}
+  - m_GUID: 6a6a14f140c23074694bd75f9ab1dbe3
+    m_Address: Assets/Room Images/8.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6f5876a279a685a4782270e342dc18ad
+    m_Address: Assets/Room Images/10.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 819d996a1a0b2af4bbb77bc0e54a829c
+    m_Address: Assets/Room Images/4.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 89e4440d98bf7ae4c8b5680d5bcc23a5
+    m_Address: Assets/Room Images/6.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8c2618e6b7080d244afa2015552977b4
+    m_Address: Assets/Room Images/4.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9b392ca1350307041a76305359890f76
+    m_Address: Assets/Room Images/9.1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9e82bb271f20d4c40a5f5170f7e089ce
+    m_Address: Assets/Room Images/9.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b5289d0930c95254baef57444570711d
+    m_Address: Assets/Room Images/3.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: bd9b5042ed8477145ad78c763e3aa29c
+    m_Address: Assets/Room Images/3.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cccc48d035fbca44eb0525f97a14deae
+    m_Address: Assets/Room Images/10.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: dd058df4b91e0aa4daf80dfcde6a7e22
+    m_Address: Assets/Room Images/1.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2800000, guid: dd058df4b91e0aa4daf80dfcde6a7e22, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: dd058df4b91e0aa4daf80dfcde6a7e22, type: 3}
+  - m_GUID: e3034fce895fabe4590845c505a4166d
+    m_Address: Assets/Room Images/8.3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: faa6c7725f4784e46a34cfee92f56339
+    m_Address: Assets/Room Images/6.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fd3fe2063f17a274abccaf3b9cd2d5b9
+    m_Address: Assets/Room Images/5.2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 828b18ec2e22ea9458f52dd238b1161b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2d7a341d32b4ca34db193255aed22f23, type: 2}
+    - {fileID: 11400000, guid: e86bbe671f005a0409470a0a322a5c3c, type: 2}
